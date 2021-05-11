@@ -129,12 +129,44 @@ export default function Home() {
   };
 
   const renderInspiration = () => {
+    const inspiration = [
+      {
+        name: "SHIBA INU",
+        image:
+          "https://static.wixstatic.com/media/60e4d6_c56f420039dc4c72a9c5816518d26242~mv2.png/v1/fill/w_106,h_105,al_c,q_85,usm_0.66_1.00_0.01/shiba.webp",
+      },
+      {
+        name: "AKITA INU",
+        image:
+          "https://static.wixstatic.com/media/60e4d6_604638b2bd0e4d878c04e351131ae92c~mv2.png/v1/fill/w_136,h_135,al_c,q_85,usm_0.66_1.00_0.01/akita.webp",
+      },
+      {
+        name: "Dogecoin",
+        image:
+          "https://static.wixstatic.com/media/60e4d6_5f4dc36bad4e4dc6bfef47047bb8ad51~mv2.png/v1/fill/w_260,h_170,al_c,q_85,usm_0.66_1.00_0.01/dogee_edited.webp",
+      },
+    ];
     return (
       <div id="Inspiration">
         <div className="title-row">Inspired by</div>
         <br />
         <div className="title-row">SHIBA, AKITA and Dogecoin</div>
         <br />
+        <div className="inspiration-row">
+          {inspiration.map(({ image, name }) => {
+            return (
+              <div className="inpiration-item">
+                <div
+                  className="image-container"
+                  style={{
+                    backgroundImage: `url(${image})`,
+                  }}
+                ></div>
+                <div className="token-name">{name}</div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   };
@@ -159,6 +191,7 @@ export default function Home() {
       {renderNFT()}
       {renderWhiteLineSeparator()}
       {renderInspiration()}
+      {renderWhiteLineSeparator()}
     </div>
   );
 }
