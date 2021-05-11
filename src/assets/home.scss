@@ -1,0 +1,206 @@
+* {
+  padding: 0;
+}
+
+body {
+  background-color: rgb(33, 33, 44);
+  overflow-x: hidden;
+}
+
+#NavBar {
+  max-width: 100vw;
+  margin-top: 2%;
+  display: flex;
+  justify-items: center;
+  justify-content: space-around;
+  align-items: center;
+
+  img {
+    width: 69px;
+  }
+
+  .pug-token-text {
+    margin-left: 20px;
+    font-weight: bolder;
+    font-size: 40px;
+  }
+
+  li {
+    display: flex;
+    color: white;
+    align-items: center;
+    max-height: 20px;
+    padding: 10px;
+  }
+
+  .white-paper-text {
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    color: white;
+    border-radius: 20px;
+    border: 1px solid white;
+    padding: 12px;
+  }
+  .white-paper-text:hover {
+    color: rgb(33, 33, 44);
+    background-color: white;
+  }
+}
+
+#ShoutOut {
+  margin-right: 350px;
+  margin-top: 2%;
+  .col {
+    color: white;
+    display: flex;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+  }
+  .shoutout-image {
+    max-height: 70px;
+  }
+}
+
+#ContentHeader {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+
+  .col {
+    max-width: 40vw;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .pug-on-moon {
+    margin-left: 20px;
+    max-width: 10vw;
+  }
+}
+
+#ContentHeader .col .row {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 40px;
+  color: white;
+}
+
+#ActionButtons {
+  margin-top: 5%;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+#ActionButtons .row {
+  margin-right: 270px;
+}
+
+@mixin action-button {
+  cursor: pointer;
+  padding: 25px;
+  color: rgb(33, 33, 44);
+  background-color: rgb(240, 185, 63);
+  border: none;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  border-radius: 50px;
+  min-width: 220px;
+}
+
+.row {
+  .dex-tool {
+    @include action-button();
+  }
+  .buy-now {
+    @include action-button();
+  }
+}
+
+.dex-tool {
+  margin-left: 20px;
+}
+
+#ShoutOut {
+  display: flex;
+  justify-content: center;
+  .shoutout-image {
+    margin-right: 80px;
+  }
+}
+
+#UseCase {
+  margin-top: 3%;
+  .header {
+    .row {
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bolder;
+      font-size: 35px;
+      color: rgb(240, 185, 63);
+      letter-spacing: 5px;
+    }
+    .use-case-definition-row {
+      display: flex;
+      justify-content: center;
+    }
+
+    .use-case-definition-row {
+      margin-top: 2%;
+      .number {
+        color: rgb(240, 185, 63);
+        font-size: 52px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-right: 2%;
+        font-weight: bolder;
+      }
+      .col {
+        color: white;
+        letter-spacing: 5px;
+        max-width: 42vw;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    }
+  }
+}
+
+.white-line-separator {
+  margin-top: 3%;
+  max-width: 5vw;
+  margin-bottom: 3%;
+}
+
+#NftCollection {
+  min-width: 100vw;
+  .row {
+    display: flex;
+    justify-content: space-around;
+  }
+  .nft-item {
+    background-color: white;
+    width: 10vw;
+    height: 200px;
+    margin: 20px;
+  }
+  .collections {
+    max-width: 50vw;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+#Inspiration {
+  .title-row {
+    width: 100vw;
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: bolder;
+    letter-spacing: 3px;
+  }
+}
