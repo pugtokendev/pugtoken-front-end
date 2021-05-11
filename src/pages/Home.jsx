@@ -252,7 +252,21 @@ export default function Home() {
   };
 
   const renderWhereToBuy = () => {
-    return <div id="WhereToBuy"></div>;
+    return (
+      <div id="WhereToBuy">
+        <div className="where-to-buy-title">WHERE TO BUY</div>
+        <div className="exchange-container">
+          <img
+            src="https://static.wixstatic.com/media/60e4d6_067c4063696340e3b906b4874027646a~mv2.png/v1/fill/w_375,h_95,al_c,q_85,usm_0.66_1.00_0.01/uniswap.webp"
+            alt=""
+          />
+          <img
+            src="https://static.wixstatic.com/media/60e4d6_440b972f0ba6437ebfa7602baef84ae8~mv2.png/v1/fill/w_225,h_110,al_c,q_85,usm_0.66_1.00_0.01/1inch.webp"
+            alt=""
+          />
+        </div>
+      </div>
+    );
   };
 
   const renderWhiteLineSeparator = () => {
@@ -279,6 +293,7 @@ export default function Home() {
       {renderTokenInfo()}
       {renderWhiteLineSeparator()}
       {renderTokenMetrics()}
+      {renderWhereToBuy()}
     </div>
   );
 }
