@@ -171,6 +171,86 @@ export default function Home() {
     );
   };
 
+  const renderTokenInfo = () => {
+    const infos = [
+      {
+        title: "ECOSYSTEM",
+        description: `SHIH TZU is an experiment in decentralized spontaneous community building. SHIH token is one of first token that allows users to hold Billions or even Trillions of them.  Nicknamed the SHIBA Inu KILLER, this ERC-20 ONLY token can remain well under a penny and still outpace Dogecoin and SHIB in a small amount of time (relatively speaking).   
+
+     We locked the 50% of the total supply to Uniswap. 
+     The remaining 50% was burned to Vitalik Buterin and we are one of the first project following this path, so everyone has to buy on the open market, ensuring a fair and complete distribution where devs don't own team tokens they can dump on the community.`,
+      },
+      {
+        title: "COMMUNITY",
+        description:
+          "SHIH is an experiment in decentralized community driven. No founders, no team tokens. This groups purpose is to allocate skills within the community to appropriate roles in Shih Tzu development and collectively agree on decisions for SHIH future.",
+      },
+      {
+        title: "MEME-Based",
+        description:
+          "Like crypto, memes were born on the internet and have journeyed from the fringes to the mainstream. They’re used to drive adoption of cryptocurrency, signal bullishness or bearishness on certain assets or coins by traders and even boost the value of tokens.",
+      },
+    ];
+
+    return (
+      <div id="TokenInfo">
+        <div className="container">
+          {infos.map(({ title, description }) => {
+            return (
+              <div className="info-container">
+                <div className="info-title">{title}</div>
+                <div className="info-description">{description}</div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  };
+
+  const renderTokenMetrics = () => {
+    const metrics = [
+      {
+        title: "TOTAL SUPPLY",
+        subHeading: "1,000,000,000 SHIH",
+        lastHeading: "",
+      },
+
+      {
+        title: "50% of Total Supply",
+        subHeading: "Vitalik Buterin's Wallet",
+        lastHeading:
+          "50% of the supply was sent to Vitalik Buterin’s wallet, that Equal to burn",
+      },
+
+      {
+        title: "50% of the Supply",
+        subHeading: "Locked in Uniswap Pool",
+        lastHeading: "We locked 50% of the total supply to the Uniswap Pool",
+      },
+    ];
+
+    return (
+      <div id="TokenMetrics">
+        <div className="token-metrics-container">
+          <div className="title">TOKENMETRICS</div>
+          {renderWhiteLineSeparator()}
+          <div className="token-metrics-row">
+            {metrics.map(({ title, subHeading, lastHeading }) => {
+              return (
+                <div className="container">
+                  <div className="title">{title}</div>
+                  <div className="subHeading">{subHeading}</div>
+                  <div className="lastHeading">{lastHeading}</div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const renderWhiteLineSeparator = () => {
     return (
       <div>
@@ -192,6 +272,9 @@ export default function Home() {
       {renderWhiteLineSeparator()}
       {renderInspiration()}
       {renderWhiteLineSeparator()}
+      {renderTokenInfo()}
+      {renderWhiteLineSeparator()}
+      {renderTokenMetrics()}
     </div>
   );
 }

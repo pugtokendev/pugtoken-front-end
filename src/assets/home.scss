@@ -230,3 +230,72 @@ body {
     }
   }
 }
+
+#TokenInfo {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  .container {
+    .info-container {
+      max-width: 40vw;
+      .info-title {
+        margin-top: 2.5em;
+        font-size: 35px;
+        font-weight: bolder;
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(240, 185, 63);
+      }
+      .info-description {
+        margin-top: 2em;
+        letter-spacing: 2px;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+      }
+    }
+  }
+}
+
+@mixin whiteFont {
+  color: white;
+}
+
+#TokenMetrics {
+  display: flex;
+  justify-content: center;
+  .token-metrics-container {
+    width: 70vw;
+    height: 40vh;
+    border: 5px dashed rgb(240, 185, 63);
+    padding: 2em;
+    .title {
+      color: rgba(240, 184, 63, 0.644);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 35px;
+      text-align: center;
+    }
+  }
+  .token-metrics-row {
+    margin-top: 2vw;
+    display: flex;
+    justify-content: space-around;
+    .container {
+      @include whiteFont();
+      .title {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+      }
+      .subHeading {
+        margin-top: 20px;
+        font-size: 20px;
+        text-align: center;
+      }
+      .lastHeading {
+        font-size: 20px;
+        margin-top: 20px;
+        max-width: 300px;
+        text-align: center;
+      }
+    }
+  }
+}
