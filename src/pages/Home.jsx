@@ -251,6 +251,10 @@ export default function Home() {
     );
   };
 
+  const renderWhereToBuy = () => {
+    return <div id="WhereToBuy"></div>;
+  };
+
   const renderWhiteLineSeparator = () => {
     return (
       <div>
