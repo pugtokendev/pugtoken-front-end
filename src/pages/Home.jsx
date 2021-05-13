@@ -1,7 +1,6 @@
 import React from "react";
 import "../assets/home.scss";
 import HeroLogo from "../assets/images/hero-logo.png";
-import ToTheMoon from "../assets/images/to-the-moon.png";
 import PugOnMoon from "../assets/images/pug-on-moon.png";
 
 export default function Home() {
@@ -277,6 +276,64 @@ export default function Home() {
     );
   };
 
+  const renderSocialMedia = () => {
+    const socialMediLinks = [
+      {
+        imageUrl:
+          "https://static.wixstatic.com/media/60e4d6_427c8c0408434415b14fbc4acbb263a4~mv2.png/v1/crop/x_702,y_0,w_2455,h_2400/fill/w_70,h_70,al_c,q_85,usm_0.66_1.00_0.01/telegram.webp",
+        link: "telegram.com",
+      },
+      {
+        imageUrl:
+          "https://static.wixstatic.com/media/60e4d6_71b2fdffe46644d0b607527c2221af27~mv2.jpeg/v1/fill/w_65,h_65,al_c,q_80,usm_0.66_1.00_0.01/tik-tok.webp",
+        link: "tiktok.com",
+      },
+      {
+        imageUrl:
+          "https://static.wixstatic.com/media/60e4d6_f3ddad7a9d9346f9afe8c1c31aba743f~mv2.png/v1/crop/x_610,y_0,w_2619,h_2160/fill/w_81,h_65,al_c,q_85,usm_0.66_1.00_0.01/Twitter-Symbol.webp",
+        link: "twitter.com",
+      },
+
+      {
+        imageUrl:
+          "https://static.wixstatic.com/media/60e4d6_d91d13b9b303471b834d207ab384f907~mv2.png/v1/fill/w_65,h_65,al_c,q_85,usm_0.66_1.00_0.01/med.webp",
+        link: "medium.com",
+      },
+      {
+        imageUrl:
+          "https://static.wixstatic.com/media/60e4d6_314a7bc3f7684d89ac350a174a4f461c~mv2.png/v1/fill/w_65,h_65,al_c,q_85,usm_0.66_1.00_0.01/ig.webp",
+        link: "instagram.com",
+      },
+    ];
+    return (
+      <div id="SocialMedia">
+        <div className="social-media-title">SOCIAL MEDIA</div>
+        <div className="social-media-message">
+          Please join our social platforms to get updates using the links below.
+        </div>
+        <div className="social-media-row-container">
+          <div className="social-media-row">
+            {socialMediLinks.map(({ imageUrl, link }) => {
+              return (
+                <div className="social-media-icon">
+                  <img src={imageUrl} alt="" />
+                </div>
+              );
+            })}
+          </div>
+          <div className="social-media-message">Email: admin@pugtoken.io</div>
+          <div className="developer-tag">Developed by Pug Token Team 2021</div>
+          <div className="doggos">
+            <img
+              src="https://static.wixstatic.com/media/60e4d6_5354d894b04b4157a7a70d85106fcce8~mv2.png/v1/crop/x_0,y_91,w_600,h_128/fill/w_600,h_129,al_c,lg_1,q_85/dreamstime_l_139719331.webp"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div>
       {renderNavBar()}
@@ -294,6 +351,8 @@ export default function Home() {
       {renderWhiteLineSeparator()}
       {renderTokenMetrics()}
       {renderWhereToBuy()}
+      {renderWhiteLineSeparator()}
+      {renderSocialMedia()}
     </div>
   );
 }

@@ -71,7 +71,7 @@ body {
   .col {
     max-width: 40vw;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
   }
 
   .pug-on-moon {
@@ -307,6 +307,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 35px;
     text-align: center;
+    font-weight: bolder;
   }
   .exchange-container {
     display: flex;
@@ -314,5 +315,47 @@ body {
     img {
       padding: 2em;
     }
+  }
+}
+
+#SocialMedia {
+  margin-top: 4%;
+  .social-media-title {
+    color: rgba(240, 184, 63);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    text-align: center;
+    font-weight: bolder;
+  }
+  .social-media-message {
+    margin-top: 3%;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .social-media-row {
+    margin-top: 4%;
+    display: flex;
+    justify-content: center;
+    .social-media-icon {
+      padding: 10px;
+    }
+  }
+
+  .developer-tag {
+    margin-top: 2%;
+    color: rgba(240, 184, 63);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+  .doggos {
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
   }
 }
