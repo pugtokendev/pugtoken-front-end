@@ -115,8 +115,8 @@ export default function Home() {
             {/* /**
     SEPARATED DOGS in LINE :: COLLECTIONS
      */}
-            {nftArt.slice(0, 4).map((art) => {
-              return <div className="nft-item"></div>;
+            {nftArt.slice(0, 4).map((art, idx) => {
+              return <div key={idx} className="nft-item"></div>;
             })}
           </div>
           <div className="col">
@@ -154,7 +154,7 @@ export default function Home() {
         <div className="inspiration-row">
           {inspiration.map(({ image, name }) => {
             return (
-              <div className="inpiration-item">
+              <div key={name} className="inpiration-item">
                 <div
                   className="image-container"
                   style={{
@@ -196,7 +196,7 @@ export default function Home() {
         <div className="container">
           {infos.map(({ title, description }) => {
             return (
-              <div className="info-container">
+              <div key={title} className="info-container">
                 <div className="info-title">{title}</div>
                 <div className="info-description">{description}</div>
               </div>
@@ -237,7 +237,7 @@ export default function Home() {
           <div className="token-metrics-row">
             {metrics.map(({ title, subHeading, lastHeading }) => {
               return (
-                <div className="container">
+                <div key={title} className="container">
                   <div className="title">{title}</div>
                   <div className="subHeading">{subHeading}</div>
                   <div className="lastHeading">{lastHeading}</div>
@@ -315,7 +315,7 @@ export default function Home() {
           <div className="social-media-row">
             {socialMediLinks.map(({ imageUrl, link }) => {
               return (
-                <div className="social-media-icon">
+                <div key={link} className="social-media-icon">
                   <img src={imageUrl} alt="" />
                 </div>
               );
