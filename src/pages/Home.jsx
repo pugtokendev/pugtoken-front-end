@@ -2,8 +2,45 @@ import React from "react";
 import "../assets/home.scss";
 import HeroLogo from "../assets/images/hero-logo.png";
 import PugOnMoon from "../assets/images/pug-on-moon.png";
+import { contract } from "../constants/contracts";
+import useWeb3 from "../hooks/web3";
+import { BigNumber } from "bignumber.js";
+
+import { Link } from "react-router-dom";
 
 export default function Home() {
+  // eslint-disable-next-line no-unused-vars
+  const { account, web3 } = useWeb3();
+  const onContract = async () => {
+    const tapswap = new web3.eth.Contract(
+      contract.tapswap.abi,
+      contract.tapswap.address
+    );
+    /**
+     * @func mint tapswap token
+     *
+     */
+
+    await tapswap.methods
+      .mint("0xdD2FD4581271e230360230F9337D5c0430Bf44C0", "1000")
+      .send({
+        from: account,
+      });
+
+    console.log(
+      new BigNumber(await tapswap.methods.totalSupply().call()).toFormat({
+        prefix: "",
+        decimalSeparator: ".",
+        groupSeparator: ",",
+        groupSize: 3,
+        secondaryGroupSize: 0,
+        fractionGroupSeparator: " ",
+        fractionGroupSize: 0,
+        suffix: "",
+      })
+    );
+  };
+
   const renderNavBar = () => {
     return (
       <div id="NavBar">
@@ -17,7 +54,13 @@ export default function Home() {
         <li>Ecosystem</li>
         <li>Tokenmetrics</li>
         <li>Community</li>
+        <li>
+          <Link to="wallet">Wallet</Link>
+        </li>
         <li className="white-paper-text">WHITEPAPER</li>
+        <li className="white-paper-text" onClick={onContract}>
+          Connect
+        </li>
       </div>
     );
   };
